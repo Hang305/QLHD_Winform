@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLHD", "QLHD\QLHD.csproj", "{4A3D8156-1E1A-44DF-9C0C-072DBB5EEAA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model_DAL", "Model_DAL\Model_DAL.csproj", "{6C28D27F-6DAC-46AA-95D5-D1CDE78740D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Control_BLL", "Control_BLL\Control_BLL.csproj", "{88B6ABD2-73AE-4700-A433-42AA4E2E9F9E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4A3D8156-1E1A-44DF-9C0C-072DBB5EEAA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A3D8156-1E1A-44DF-9C0C-072DBB5EEAA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A3D8156-1E1A-44DF-9C0C-072DBB5EEAA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A3D8156-1E1A-44DF-9C0C-072DBB5EEAA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C28D27F-6DAC-46AA-95D5-D1CDE78740D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C28D27F-6DAC-46AA-95D5-D1CDE78740D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C28D27F-6DAC-46AA-95D5-D1CDE78740D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C28D27F-6DAC-46AA-95D5-D1CDE78740D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88B6ABD2-73AE-4700-A433-42AA4E2E9F9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88B6ABD2-73AE-4700-A433-42AA4E2E9F9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88B6ABD2-73AE-4700-A433-42AA4E2E9F9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88B6ABD2-73AE-4700-A433-42AA4E2E9F9E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BA6F3310-212D-407E-B791-AC67AA45B191}
+	EndGlobalSection
+EndGlobal
