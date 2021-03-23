@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Control_BLL;
 
+
 namespace QLHD
 {
     public partial class formHD : Form
@@ -21,6 +22,7 @@ namespace QLHD
         Control_CTHD cthd = new Control_CTHD();
         Control_CongTy CongTy = new Control_CongTy();
 
+        public static string MaHD;
        
         DataTable CTHD;
         //SqlCommand cmd;
@@ -210,7 +212,16 @@ namespace QLHD
             txtDonGia.Text = dataGridViewCTHD [ 3, cell_CTHD ].Value.ToString();
             txtSoLuong.Text = dataGridViewCTHD [4, cell_CTHD ].Value.ToString();
         }
-
+        //Print HoaDon
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+            //MaHD = txtMaHD.Text;
+            MaHD = dataGridViewHD [ 1, cell ].Value.ToString();
+            MessageBox.Show(MaHD);
+            PrintHoaDon printHD = new PrintHoaDon();
+            printHD.Show();
+        }
+        //Delete HoaDon
         private void btnXoa_Click(object sender, EventArgs e)
         {
             dataGridViewCTHD.DataSource = cthd.delete_CTHD(txtMaHD.Text);

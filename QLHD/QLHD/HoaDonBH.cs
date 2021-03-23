@@ -16,14 +16,14 @@ namespace QLHD {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class ReportHoaDon : ReportClass {
+    public class HoaDonBH : ReportClass {
         
-        public ReportHoaDon() {
+        public HoaDonBH() {
         }
         
         public override string ResourceName {
             get {
-                return "ReportHoaDon.rpt";
+                return "HoaDonBH.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace QLHD {
         
         public override string FullResourceName {
             get {
-                return "QLHD.ReportHoaDon.rpt";
+                return "QLHD.HoaDonBH.rpt";
             }
             set {
                 // Do nothing
@@ -66,7 +66,7 @@ namespace QLHD {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupHeaderSection1 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
             get {
                 return this.ReportDefinition.Sections[2];
             }
@@ -74,7 +74,7 @@ namespace QLHD {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section3 {
+        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
             get {
                 return this.ReportDefinition.Sections[3];
             }
@@ -82,33 +82,17 @@ namespace QLHD {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section GroupFooterSection1 {
-            get {
-                return this.ReportDefinition.Sections[4];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section Section4 {
-            get {
-                return this.ReportDefinition.Sections[5];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public CrystalDecisions.CrystalReports.Engine.Section Section5 {
             get {
-                return this.ReportDefinition.Sections[6];
+                return this.ReportDefinition.Sections[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedReportHoaDon : Component, ICachedReport {
+    public class CachedHoaDonBH : Component, ICachedReport {
         
-        public CachedReportHoaDon() {
+        public CachedHoaDonBH() {
         }
         
         [Browsable(false)]
@@ -145,7 +129,7 @@ namespace QLHD {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            ReportHoaDon rpt = new ReportHoaDon();
+            HoaDonBH rpt = new HoaDonBH();
             rpt.Site = this.Site;
             return rpt;
         }
