@@ -55,7 +55,8 @@ namespace QLHD
             txtTenCT.Clear();
             txtDiaChi.Clear();
 
-            txtMaKH.Focus();
+            txtMaKH.Text = KhachHang.automatic_MaMax("KhachHang","MaKH");
+            txtMaKH.Enabled = false;
 
         }
 

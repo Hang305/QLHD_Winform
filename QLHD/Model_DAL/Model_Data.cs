@@ -71,6 +71,23 @@ namespace Model_DAL
             closeConnectData();
             return dt;
         }
+        public string selectMaMax_sql(string sql, string [ ] name, object [ ] value, int Npara)
+        {
+            getConnectData();
+            //thực thi lấy dữ liệu từ CSDL
+            cmd = new SqlCommand(sql, getConnect);
+            cmd.CommandType = CommandType.StoredProcedure;
+            for ( int i = 0 ; i < Npara ; i++ )
+            {
+                cmd.Parameters.AddWithValue(name [ i ], value [ i ]);
+            }
+            data = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            data.Fill(dt);
+            string maMax = dt.Rows [ 0 ] [ 0 ].ToString();
+            closeConnectData();
+            return maMax;
+        }
 
     }
 

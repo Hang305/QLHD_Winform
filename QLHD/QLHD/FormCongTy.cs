@@ -50,8 +50,8 @@ namespace QLHD
             txtFax.Clear();
             txtMST.Clear();
 
-            txtMaCT.Focus();
-
+            txtMaCT.Text = CongTy.automatic_MaMax("CongTy", "MaCty");
+            txtMaCT.Enabled = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

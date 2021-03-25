@@ -11,6 +11,7 @@ namespace Control_BLL
    public class Control_CTHD
     {
         CTHD_Model CTHD = new CTHD_Model();
+        automaticMa_Model automaticMa = new automaticMa_Model();
 
         public DataTable select_CTHD()
         {
@@ -20,6 +21,12 @@ namespace Control_BLL
         {
             return CTHD.selectWhere_CTHD(sohd,mahh);
         }
+
+        public string automatic_MaMax(string Bang, string Ma)
+        {
+            return automaticMa.Actomatic_Ma(Bang, Ma);
+        }
+
         public DataTable selectWhereSoHD_CTHD(string sohd)
         {
             return CTHD.selectWhereSoHD_CTHD(sohd);

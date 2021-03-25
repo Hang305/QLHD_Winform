@@ -12,6 +12,7 @@ namespace Control_BLL
     {
 
         NhanVien_Model NhanVien = new NhanVien_Model();
+        automaticMa_Model automaticMa = new automaticMa_Model();
 
         public DataTable select_NhanVien()
         {
@@ -20,6 +21,11 @@ namespace Control_BLL
         public DataTable select_NhanVien(string manv)
         {
             return NhanVien.selectWhere_NhanVien(manv);
+        }
+
+        public string automatic_MaMax(string Bang, string Ma)
+        {
+            return automaticMa.Actomatic_Ma(Bang, Ma);
         }
 
         public int insert_NhanVien(string MaNV, string TenNV)

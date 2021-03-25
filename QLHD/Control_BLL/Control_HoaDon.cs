@@ -11,7 +11,7 @@ namespace Control_BLL
    public class Control_HoaDon
     {
         HoaDon_Model HoaDon = new HoaDon_Model();
-
+      
         public DataTable select_HoaDon()
         {
             return HoaDon.select_HoaDon();
@@ -23,6 +23,10 @@ namespace Control_BLL
         public DataTable selectFind_HoaDon()
         {
             return HoaDon.selectFind_HoaDon();
+        }
+        public string automatic_MaMax(string Bang,string Ma)
+        {
+            return HoaDon.Actomatic_Ma(Bang, Ma);
         }
 
         public int insert_HoaDon( string Sohd,DateTime ngaylap,string hinhthuctt, string makh, string manv, string mact)

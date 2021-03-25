@@ -60,7 +60,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cbTenCT = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtHinhThucTT = new System.Windows.Forms.TextBox();
+            this.cbHinhThucTT = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCTHD)).BeginInit();
             this.SuspendLayout();
@@ -349,19 +349,23 @@
             this.label10.TabIndex = 9;
             this.label10.Text = "Hình thức TT";
             // 
-            // txtHinhThucTT
+            // cbHinhThucTT
             // 
-            this.txtHinhThucTT.Location = new System.Drawing.Point(369, 102);
-            this.txtHinhThucTT.Name = "txtHinhThucTT";
-            this.txtHinhThucTT.Size = new System.Drawing.Size(100, 20);
-            this.txtHinhThucTT.TabIndex = 10;
+            this.cbHinhThucTT.FormattingEnabled = true;
+            this.cbHinhThucTT.Items.AddRange(new object[] {
+            "Tiền mặt",
+            "Ngân hàng"});
+            this.cbHinhThucTT.Location = new System.Drawing.Point(369, 106);
+            this.cbHinhThucTT.Name = "cbHinhThucTT";
+            this.cbHinhThucTT.Size = new System.Drawing.Size(100, 21);
+            this.cbHinhThucTT.TabIndex = 10;
             // 
             // formHD
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1173, 482);
-            this.Controls.Add(this.txtHinhThucTT);
+            this.Controls.Add(this.cbHinhThucTT);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.cbTenCT);
             this.Controls.Add(this.label9);
@@ -438,6 +442,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbTenCT;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtHinhThucTT;
+        private System.Windows.Forms.ComboBox cbHinhThucTT;
     }
 }

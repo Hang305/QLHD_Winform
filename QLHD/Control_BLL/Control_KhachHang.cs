@@ -11,6 +11,7 @@ namespace Control_BLL
    public class Control_KhachHang
     {
         KhachHang_Model KhachHang = new KhachHang_Model();
+        automaticMa_Model automaticMa = new automaticMa_Model();
 
         public DataTable select_KhachHang()
         {
@@ -19,6 +20,10 @@ namespace Control_BLL
         public DataTable selectWhere_KhachHang(string makh)
         {
             return KhachHang.selectWhere_KhachHang(makh);
+        }
+        public string automatic_MaMax(string Bang, string Ma)
+        {
+            return automaticMa.Actomatic_Ma(Bang, Ma);
         }
 
         public int insert_KhachHang(string MaKH, string Hoten, string TenCT, string MST, string DiaChi)

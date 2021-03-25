@@ -11,6 +11,7 @@ namespace Control_BLL
     public class Control_HangHoa
     {
         HangHoa_Model HangHoa = new HangHoa_Model();
+        automaticMa_Model automaticMa = new automaticMa_Model();
 
         public DataTable select_HangHoa()
         {
@@ -20,6 +21,12 @@ namespace Control_BLL
         {
             return HangHoa.selectMaHH_HangHoa();
         }
+
+        public string automatic_MaMax(string Bang, string Ma)
+        {
+            return automaticMa.Actomatic_Ma(Bang, Ma);
+        }
+
         public DataTable selectWhere_HangHoa(string mahh)
         {
             return HangHoa.selectWhere_HangHoa(mahh);

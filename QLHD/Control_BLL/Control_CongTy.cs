@@ -11,7 +11,7 @@ namespace Control_BLL
  public   class Control_CongTy
     {
         CongTy_Model CongTy = new CongTy_Model();
-
+        automaticMa_Model automaticMa = new automaticMa_Model();
         public DataTable select_CongTy()
         {
             return CongTy.select_CongTy();
@@ -20,7 +20,10 @@ namespace Control_BLL
         {
             return CongTy.selectWhere_CongTy(macty);
         }
-
+        public string automatic_MaMax(string Bang, string Ma)
+        {
+            return automaticMa.Actomatic_Ma(Bang, Ma);
+        }
         public int insert_CongTy(string MaCT, string TenCT, string DiaChi, int SDT, int Fax, int MST)
         {
             return CongTy.insert_CongTy( MaCT,  TenCT,  DiaChi,  SDT,  Fax,  MST);

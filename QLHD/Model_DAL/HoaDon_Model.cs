@@ -26,20 +26,13 @@ namespace Model_DAL
             name [ 0 ] = "@SoHD"; value [ 0 ] = SoHD;
             return model.selectWhere_sql("SeleteWhere_HoaDon",name,value,1);
         }
+
+        //selectFind
         public DataTable selectFind_HoaDon()
         {
             return model.select_sql("SeleteHoaDon_whereFind");
-            //name = new string [ 2 ];
-            //value = new string [ 2 ];
-
-            //name [ 0 ] = "@HoTenKH"; value [ 0 ] = HoTenKH;
-            //name [ 1 ] = "@SoHD"; value [ 1 ] = SoHD;
-            //name [ 2 ] = "@NgayLapHD"; value [ 2 ] = NgayLapHD.ToString();
-            //name [ 3 ] = "@TenNV"; value [ 3 ] = TenNV;
-
-
-            //return model.selectWhere_sql("SeleteHoaDon_whereFind", name, value, 4);
         }
+
         //insert
         public int insert_HoaDon(string SoHD, DateTime NgayLap, string HinhThucTT, string MaKH, string MaNV, string MaCT)
         {
@@ -78,7 +71,42 @@ namespace Model_DAL
             name [ 0 ] = "@SoHD"; value [ 0 ] = SoHD;
             return model.ThucHien_sql("Delete_HoaDon", name, value, 1);
         }
-       
+        private string selectMaMax(string Bang, string Ma)
+        {
+            name = new string [ 2 ];
+            value = new object [ 2 ];
+
+            name [ 0 ] = "@Bang"; value [ 0 ] = Bang;
+            name [ 1 ] = "@Ma"; value [ 1 ] = Ma;
+            return model.selectMaMax_sql("LayMaLonNhat", name, value, 2);
+        }
+        public string Actomatic_Ma(string Bang, string Ma)
+        {
+            string MaCu, MaMoi;
+            MaCu = selectMaMax(Bang, Ma);
+            string TienTo;
+            int HauTo;
+            TienTo = MaCu.Substring(0, 3);
+            HauTo = int.Parse(MaCu.Substring(3).ToString());
+            HauTo++;
+            if ( HauTo < 10 )
+            {
+                MaMoi = string.Concat(TienTo, "00", HauTo.ToString());
+            }
+            else
+            {
+                if ( HauTo < 100 )
+                {
+                    MaMoi = string.Concat(TienTo, "0", HauTo.ToString());
+
+                }
+                else
+                {
+                    MaMoi = string.Concat(TienTo, HauTo.ToString());
+                }
+            }
+            return MaMoi;
+        }
 
     }
 }

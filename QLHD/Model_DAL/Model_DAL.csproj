@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="automaticMa_Model.cs" />
     <Compile Include="CongTy_Model.cs" />
     <Compile Include="CTHD_Model.cs" />
     <Compile Include="HangHoa_Model.cs" />

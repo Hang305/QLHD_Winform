@@ -51,7 +51,8 @@ namespace QLHD
             txtMaNV.Clear();
             txtTenNV.Clear();
 
-            txtMaNV.Focus();
+            txtMaNV.Text = NhanVien.automatic_MaMax("NhanVien","MaNV");
+            txtMaNV.Enabled = false;
         }
 
         private void btnExit_Click(object sender, EventArgs e)

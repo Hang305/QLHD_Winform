@@ -89,9 +89,6 @@ namespace QLHD
         //Insert CTHD
         private void btnInsertCTHD_Click(object sender, EventArgs e)
         {
-            //cthd.selectWhereSoHD_CTHD(txtMaHD.Text);
-            //dataGridViewCTHD.DataSource = cthd.selectFind_CTHD(txtMaHD.Text);
-            //i đếm số dòng
             int i = 1;
             try
             {
@@ -170,26 +167,29 @@ namespace QLHD
             txtDVT.Clear();
             txtDonGia.Clear();
             txtMaHD.Clear();
-            txtMaHD.Focus();
+
+            txtMaHD.Text = HangHoa.automatic_MaMax("HoaDon","SoHD");
+            txtMaHD.Enabled = false;
             dataGridViewCTHD = null;
+
             
         }
         //Save HoaDon_CTHD
         private void btnLuu_Click(object sender, EventArgs e)
         {
-           HoaDon.insert_HoaDon(txtMaHD.Text, dateTimePickerNgayLap.Value,txtHinhThucTT.Text, cbTenKH.SelectedValue.ToString(), cbTenNV.SelectedValue.ToString(), cbTenCT.SelectedValue.ToString());
+           HoaDon.insert_HoaDon(txtMaHD.Text, dateTimePickerNgayLap.Value,cbHinhThucTT.Text.ToString(), cbTenKH.SelectedValue.ToString(), cbTenNV.SelectedValue.ToString(), cbTenCT.SelectedValue.ToString());
             foreach ( DataRow item in CTHD.Rows )
             {
                     cthd.insert_CTHD(txtMaHD.Text, item [ 0 ].ToString(), int.Parse(item [ 4 ].ToString()));
             }
-            CTHD.Clear();
+            //CTHD.Clear();
             formHD_Load(sender, e);
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
             dataGridViewCTHD.DataSource = cthd.delete_CTHD(txtMaHD.Text);
-            HoaDon.update_HoaDon(txtMaHD.Text, DateTime.Parse(dateTimePickerNgayLap.Value.ToShortDateString()), txtHinhThucTT.Text, cbTenKH.SelectedValue.ToString(), cbTenNV.SelectedValue.ToString(), cbTenCT.SelectedValue.ToString());
+            HoaDon.update_HoaDon(txtMaHD.Text, DateTime.Parse(dateTimePickerNgayLap.Value.ToShortDateString()), cbHinhThucTT.Text.ToString(), cbTenKH.SelectedValue.ToString(), cbTenNV.SelectedValue.ToString(), cbTenCT.SelectedValue.ToString());
 
             CTHD.AcceptChanges();
 
@@ -199,8 +199,9 @@ namespace QLHD
                cthd.insert_CTHD(txtMaHD.Text, item [ 0 ].ToString(), int.Parse(item [ 4 ].ToString()));
             }
            
-            CTHD.Clear();
+            //CTHD.Clear();
             formHD_Load(sender, e);
+            dataGridViewCTHD.DataSource = cthd.selectFind_CTHD(txtMaHD.Text);
         }
 
         //CellClick CTHD

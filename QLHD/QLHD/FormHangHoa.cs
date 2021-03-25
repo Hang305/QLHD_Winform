@@ -35,7 +35,8 @@ namespace QLHD
             txtDVT.Clear();
             txtDonGia.Clear();
 
-            txtMaHH.Focus();
+            txtMaHH.Text = HangHoa.automatic_MaMax("HangHoa","MaHH");
+            txtMaHH.Enabled = false;
         }
         
         //Show
@@ -63,6 +64,7 @@ namespace QLHD
 
         private void dataGridViewHangHoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+           
             txtMaHH.Text = dataGridViewHangHoa.Rows [ e.RowIndex ].Cells [ 0 ].Value.ToString();
             txtTenHH.Text = dataGridViewHangHoa.Rows [ e.RowIndex ].Cells [ 1 ].Value.ToString();
             txtDVT.Text = dataGridViewHangHoa.Rows [ e.RowIndex ].Cells [ 2 ].Value.ToString();
