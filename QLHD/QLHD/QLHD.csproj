@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConvertNumberToText.cs" />
     <Compile Include="FormCongTy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +96,12 @@
       <DependentUpon>HoaDonBH.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="PrintHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +136,9 @@
     <EmbeddedResource Include="HoaDonBH.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>HoaDonBH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrintHoaDon.resx">
       <DependentUpon>PrintHoaDon.cs</DependentUpon>

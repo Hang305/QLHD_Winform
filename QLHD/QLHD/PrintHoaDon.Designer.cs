@@ -51,6 +51,7 @@
             this.Controls.Add(this.crystalReportViewer1);
             this.Name = "PrintHoaDon";
             this.Text = "PrintHoaDon";
+            this.Load += new System.EventHandler(this.PrintHoaDon_Load);
             this.ResumeLayout(false);
 
         }

@@ -46,6 +46,7 @@
     <Compile Include="Control_HangHoa.cs" />
     <Compile Include="Control_HoaDon.cs" />
     <Compile Include="Control_KhachHang.cs" />
+    <Compile Include="Control_Login.cs" />
     <Compile Include="Control_NhanVien.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

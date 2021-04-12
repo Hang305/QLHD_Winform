@@ -8,6 +8,8 @@ namespace QLHD
 {
     static class Program
     {
+        public static string user;
+        public static string Quyen;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

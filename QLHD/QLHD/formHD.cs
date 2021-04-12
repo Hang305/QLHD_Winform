@@ -23,11 +23,13 @@ namespace QLHD
         Control_CongTy CongTy = new Control_CongTy();
 
         public static string MaHD;
+        public static double ThanhTien =0;
+        public static double TongTien ;
        
         DataTable CTHD;
         //SqlCommand cmd;
         int cell, cell_CTHD;
-        double ThanhTien;
+        //double ThanhTien;
         public formHD()
         {
             InitializeComponent();
@@ -108,6 +110,8 @@ namespace QLHD
                             CTHD.Rows.Add(cbHangHoa.SelectedValue.ToString(), cbHangHoa.Text, txtDVT.Text, double.Parse(txtDonGia.Text), SL, ThanhTien);
 
                             dataGridViewCTHD.DataSource = CTHD;
+                            TongTien += ThanhTien;
+                           
                             break;
                         }
                         i++;
@@ -117,6 +121,7 @@ namespace QLHD
                         ThanhTien = int.Parse(txtSoLuong.Text) * double.Parse(txtDonGia.Text);
                         CTHD.Rows.Add(cbHangHoa.SelectedValue.ToString(), cbHangHoa.Text, txtDVT.Text, double.Parse(txtDonGia.Text), int.Parse(txtSoLuong.Text), ThanhTien);
                         dataGridViewCTHD.DataSource = CTHD;
+                        TongTien += ThanhTien;
                     }
                 }
             }
@@ -216,12 +221,24 @@ namespace QLHD
         //Print HoaDon
         private void btnIn_Click(object sender, EventArgs e)
         {
-            //MaHD = txtMaHD.Text;
             MaHD = dataGridViewHD [ 1, cell ].Value.ToString();
-            MessageBox.Show(MaHD);
             PrintHoaDon printHD = new PrintHoaDon();
+
+            foreach ( DataRow item in CTHD.Rows )
+            {
+                TongTien += double.Parse(item [ 5 ].ToString());
+               
+            }
+            if ( CTHD.Rows.Count <0 )
+            {
+                TongTien += TongTien;
+            }
+            //MessageBox.Show(TongTien.ToString());
             printHD.Show();
         }
+
+       
+
         //Delete HoaDon
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -232,5 +249,6 @@ namespace QLHD
             formHD_Load(sender, e);
         }
 
+        
     }
 }
